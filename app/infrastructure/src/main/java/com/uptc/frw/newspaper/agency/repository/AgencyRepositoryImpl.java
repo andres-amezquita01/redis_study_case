@@ -24,7 +24,6 @@ public class AgencyRepositoryImpl  implements AgencyRepository {
                 .map(AgencyDto::toDomain);
     }
 
-    @Cacheable(value = "agencies")
     @Override
     public List<Agency> getAllAgencies() {
         return jpaRepository
