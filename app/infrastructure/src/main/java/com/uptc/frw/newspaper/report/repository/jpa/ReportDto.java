@@ -1,6 +1,7 @@
 package com.uptc.frw.newspaper.report.repository.jpa;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -18,7 +19,17 @@ public class ReportDto {
     public String content;
     @Column(name = "ocurred_at_report")
     public ZonedDateTime occurredAtReport;
-
     @OneToMany(mappedBy = "report")
-    private List<ReportSubmissionDto> reportSubmissions;
+    public List<ReportSubmissionDto> reportSubmissions;
+    @ManyToMany
+    @JoinTable(
+            name = "RelatedReport",
+            joinColumns = @JoinColumn(name = "id_report"),
+            inverseJoinColumns = @JoinColumn(name = "id_related_report")
+    )
+    public List<ReportDto> relatedFromReports;
+    @ManyToMany(mappedBy = "relatedFromReports")
+    public List<ReportDto> relatedToReports;
+    @OneToMany(mappedBy = "report")
+    public List<ReportCoverDto> coverts;
 }

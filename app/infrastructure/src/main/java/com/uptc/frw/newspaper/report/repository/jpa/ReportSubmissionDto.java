@@ -18,11 +18,9 @@ public class ReportSubmissionDto {
     public long idReport;
     @Column(name = "created_at_report_submission")
     public ZonedDateTime createdAt;
-
     @ManyToOne
     @JoinColumn(name = "id_agency")
     public AgencyDto agency;
-
     @ManyToOne
     @JoinColumn(name = "id_report")
     public ReportDto report;

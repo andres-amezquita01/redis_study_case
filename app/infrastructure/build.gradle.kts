@@ -20,5 +20,3 @@ dependencies {
     implementation(project(":app:application"))
     implementation(project(":app:domain"))
 }
-
-

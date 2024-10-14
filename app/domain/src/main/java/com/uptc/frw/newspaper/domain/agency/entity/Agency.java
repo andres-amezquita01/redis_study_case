@@ -11,6 +11,5 @@ public record Agency (
         Long id,
         String name,
         ZonedDateTime createdAt,
-        @JsonIgnoreProperties({"agency"}) // This annotation shouldn't go here
         List<ReportSubmission> reportSubmissions
 ) implements Serializable {}

@@ -5,6 +5,7 @@ import com.uptc.frw.newspaper.report.repository.jpa.ReportSubmissionDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
@@ -23,7 +24,6 @@ public class AgencyDto {
     public String name;
     @Column(name = "created_at_agency")
     public ZonedDateTime createdAt;
-
     @OneToMany(mappedBy = "agency")
     public List<ReportSubmissionDto> reportSubmissions;
 
