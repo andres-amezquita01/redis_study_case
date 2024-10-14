@@ -7,7 +7,7 @@ CREATE TABLE Agency (
 CREATE TABLE Journalist (
     id_journalist INT PRIMARY KEY AUTO_INCREMENT,
     name_journalist TEXT NOT NULL,
-    email_journalist TEXT,
+    address_journalist TEXT,
     phone_journalist TEXT
 );
 
