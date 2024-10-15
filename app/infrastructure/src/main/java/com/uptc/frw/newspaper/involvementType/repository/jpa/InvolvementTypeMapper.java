@@ -7,7 +7,7 @@ import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper( uses = ReportSubmissionMapper.class)
+@Mapper()
 public interface InvolvementTypeMapper {
     InvolvementTypeMapper INSTANCE = Mappers.getMapper( InvolvementTypeMapper.class );
 
