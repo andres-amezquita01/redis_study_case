@@ -4,6 +4,9 @@ import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.jounalist.repository.jpa.JournalistDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Date;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -16,6 +19,9 @@ public class ReportCoverDto {
     public long idJournalist;
     @Column(name = "id_report", updatable = false, insertable = false)
     public long idReport;
+    @Column(name = "covered_date")
+    public Date covered_date;//if I change it to coveredDate, it becomes null
+
     @ManyToOne
     @JoinColumn(name = "id_report")
     public ReportDto report;
