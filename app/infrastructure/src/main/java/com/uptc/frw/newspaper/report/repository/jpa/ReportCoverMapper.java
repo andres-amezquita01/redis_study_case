@@ -4,6 +4,7 @@ import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.jounalist.repository.jpa.JournalistMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import org.mapstruct.Context;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

@@ -6,6 +6,7 @@ import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class ReportCoverDto {
     @Column(name = "id_report", updatable = false, insertable = false)
     public long idReport;
     @Column(name = "covered_date")
-    public Date covered_date;//if I change it to coveredDate, it becomes null
+    public ZonedDateTime coveredDate;
 
     @ManyToOne
     @JoinColumn(name = "id_report")

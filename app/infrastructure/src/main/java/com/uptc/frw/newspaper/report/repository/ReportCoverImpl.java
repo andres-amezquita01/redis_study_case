@@ -3,6 +3,7 @@ package com.uptc.frw.newspaper.report.repository;
 import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.domain.report.repository.ReportCoverRepository;
 import com.uptc.frw.newspaper.involvementType.repository.jpa.InvolvementTypeDTO;
+import com.uptc.frw.newspaper.jounalist.repository.jpa.JournalistDto;
 import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverDto;
 import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverJpaRepository;
 import org.springframework.stereotype.Service;
@@ -49,7 +50,9 @@ public class ReportCoverImpl implements ReportCoverRepository {
         return getReportCoverById(reportCoverId)
                 .map(ReportCoverDto::fromReportCover)
                 .map(reportCoverDtoToUpdate ->{
-                   //map "covered at" and update it.
+                    reportCoverDtoToUpdate.report = newReportCoverData.report;
+                    reportCoverDtoToUpdate.journalist = newReportCoverData.journalist;
+                    reportCoverDtoToUpdate.coveredDate = newReportCoverData.coveredDate;
                     return reportCoverJpaRepository.save(reportCoverDtoToUpdate).toDomain();
                 });
     }
