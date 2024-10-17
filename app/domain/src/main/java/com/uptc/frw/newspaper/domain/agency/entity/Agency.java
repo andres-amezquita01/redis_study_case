@@ -1,5 +1,6 @@
 package com.uptc.frw.newspaper.domain.agency.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
 
 import java.io.Serializable;
