@@ -1,7 +1,7 @@
 package com.uptc.frw.newspaper.involved.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.involved.entity.Involved;
-import com.uptc.frw.newspaper.involvement.jpa.InvolvementDto;
+import com.uptc.frw.newspaper.involvement.repository.jpa.InvolvementDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,5 +37,5 @@ public class InvolvedDto {
     public static InvolvedDto fromAgency(final Involved agency){
         return InvolvedMapper.INSTANCE.toDto(agency, new CycleAvoidingMappingContext());
     }
-
 }
+
