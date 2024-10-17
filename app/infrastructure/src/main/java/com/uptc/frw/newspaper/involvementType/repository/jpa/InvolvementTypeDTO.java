@@ -1,10 +1,13 @@
 package com.uptc.frw.newspaper.involvementType.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.involvementType.entity.InvolvementType;
+import com.uptc.frw.newspaper.involvement.jpa.InvolvementDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -19,6 +22,9 @@ public class InvolvementTypeDTO {
     public String title;
     @Column(name = "description_involvement_type")
     public String description;
+
+    @OneToMany(mappedBy = "involvementType")
+    public List<InvolvementDto> involvements;
 
     public InvolvementType toDomain(){
         return InvolvementTypeMapper.INSTANCE.toDomain(this, new CycleAvoidingMappingContext());

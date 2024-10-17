@@ -37,5 +37,5 @@ public class InvolvedDto {
     public static InvolvedDto fromAgency(final Involved agency){
         return InvolvedMapper.INSTANCE.toDto(agency, new CycleAvoidingMappingContext());
     }
-
 }
+
