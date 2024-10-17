@@ -1,6 +1,8 @@
 package com.uptc.frw.newspaper.report.repository.jpa;
 
 import com.uptc.frw.newspaper.agency.repository.jpa.AgencyDto;
+import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
+import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 
 import java.time.ZonedDateTime;
@@ -24,4 +26,27 @@ public class ReportSubmissionDto {
     @ManyToOne
     @JoinColumn(name = "id_report")
     public ReportDto report;
+
+    public ReportSubmissionDto() {
+    }
+
+    public ReportSubmission toDomain() {
+        return ReportSubmissionMapper.INSTANCE.toDomain(this, new CycleAvoidingMappingContext());
+    }
+
+    public static ReportSubmissionDto fromReportSubmission(final ReportSubmission reportSubmission) {
+        return ReportSubmissionMapper.INSTANCE.toDto(reportSubmission, new CycleAvoidingMappingContext());
+    }
+
+    public void setAgency(AgencyDto agency) {
+        this.agency = agency;
+    }
+
+    public void setReport(ReportDto report) {
+        this.report = report;
+    }
+
+    public void setCreatedAt(ZonedDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

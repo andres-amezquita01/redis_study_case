@@ -1,5 +1,6 @@
 package com.uptc.frw.newspaper.domain.agency.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
 
@@ -11,5 +12,6 @@ public record Agency (
         Long id,
         String name,
         ZonedDateTime createdAt,
+        @JsonIgnore
         List<ReportSubmission> reportSubmissions
 ) implements Serializable {}
