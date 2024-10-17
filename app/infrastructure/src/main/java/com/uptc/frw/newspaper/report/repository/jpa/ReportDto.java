@@ -1,13 +1,18 @@
 package com.uptc.frw.newspaper.report.repository.jpa;
 
+import com.uptc.frw.newspaper.domain.report.entity.Report;
+import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
 @Access(AccessType.FIELD)
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Report")
 public class ReportDto {
     @Id
@@ -32,4 +37,12 @@ public class ReportDto {
     public List<ReportDto> relatedToReports;
     @OneToMany(mappedBy = "report")
     public List<ReportCoverDto> coverts;
+
+    public Report toDomain() {
+        return ReportMapper.INSTANCE.toDomain(this, new CycleAvoidingMappingContext());
+    }
+
+    public static ReportDto fromReport(final Report report) {
+        return ReportMapper.INSTANCE.toDto(report, new CycleAvoidingMappingContext());
+    }
 }
