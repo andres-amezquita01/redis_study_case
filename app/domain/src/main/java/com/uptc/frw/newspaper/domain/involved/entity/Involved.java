@@ -10,6 +10,5 @@ public record Involved (
         Long id,
         String name,
         ZonedDateTime birthDate,
-        @JsonIgnore
         List<Involvement> involvements
 ) { }
