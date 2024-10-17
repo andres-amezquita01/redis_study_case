@@ -11,6 +11,5 @@ public record Report(
         String title,
         String content,
         ZonedDateTime occurredAtReport,
-        @JsonIgnore
         List<ReportSubmission> reportSubmissions
 ) implements Serializable { }
