@@ -1,9 +1,14 @@
 package com.uptc.frw.newspaper.domain.involved.entity;
 
-import java.time.ZonedDateTime;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.uptc.frw.newspaper.domain.involvement.Involvement;
 
-public record Involved(
+import java.time.ZonedDateTime;
+import java.util.List;
+
+public record Involved (
         Long id,
         String name,
-        ZonedDateTime birthDate
+        ZonedDateTime birthDate,
+        List<Involvement> involvements
 ) { }
