@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReportSubmissionImpl implements ReportSubmissionRepository {
+public class ReportSubmissionRepositoryImpl implements ReportSubmissionRepository {
 
     private final ReportSubmissionJpaRepository jpaRepository;
 
@@ -26,7 +26,7 @@ public class ReportSubmissionImpl implements ReportSubmissionRepository {
     @Autowired
     private AgencyJpaRepository agencyJpaRepository;
 
-    public ReportSubmissionImpl(ReportSubmissionJpaRepository jpaRepository) {
+    public ReportSubmissionRepositoryImpl(ReportSubmissionJpaRepository jpaRepository) {
         this.jpaRepository = jpaRepository;
     }
 
@@ -72,16 +72,20 @@ public class ReportSubmissionImpl implements ReportSubmissionRepository {
 
     @Override
     public Optional<ReportSubmission> updateReportSubmission(Long agencyId, Long reportId, Long id) {
-        AgencyDto agency = agencyJpaRepository.findById(agencyId).get();
-        ReportDto report = reportJpaRepository.findById(reportId).get();
+        AgencyDto agency = agencyJpaRepository.findById(agencyId).orElse(null);
+        ReportDto report = reportJpaRepository.findById(reportId).orElse(null);
 
-        return getReportSubmissionById(id).map(ReportSubmissionDto::fromReportSubmission)
-                .map(reportSubToUpdate -> {
-                    reportSubToUpdate.report = report;
-                    reportSubToUpdate.agency = agency;
-                    reportSubToUpdate.createdAt = ZonedDateTime.now();
-                    return jpaRepository.save(reportSubToUpdate);
-                }).map(ReportSubmissionDto::toDomain);
+        if (agency != null && report != null) {
+            return getReportSubmissionById(id).map(ReportSubmissionDto::fromReportSubmission)
+                    .map(reportSubToUpdate -> {
+                        reportSubToUpdate.report = report;
+                        reportSubToUpdate.agency = agency;
+                        reportSubToUpdate.createdAt = ZonedDateTime.now();
+                        return jpaRepository.save(reportSubToUpdate);
+                    }).map(ReportSubmissionDto::toDomain);
+        }
+
+        throw new RuntimeException("Agency or Report not exist");
     }
 
 }

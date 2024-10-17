@@ -1,11 +1,8 @@
 package com.uptc.frw.newspaper.application.report;
 
 import com.uptc.frw.newspaper.application.shared.BaseUseCases;
-import com.uptc.frw.newspaper.domain.agency.repository.AgencyRepository;
 import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
-import com.uptc.frw.newspaper.domain.report.repository.ReportRepository;
 import com.uptc.frw.newspaper.domain.report.repository.ReportSubmissionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

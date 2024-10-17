@@ -4,7 +4,6 @@ import com.uptc.frw.newspaper.agency.repository.jpa.AgencyDto;
 import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
-//import lombok.Setter;
 
 import java.time.ZonedDateTime;
 
@@ -19,16 +18,11 @@ public class ReportSubmissionDto {
     public long idAgency;
     @Column(name = "id_report", insertable = false, updatable = false)
     public long idReport;
-    //@Setter
     @Column(name = "created_at_report_submission")
     public ZonedDateTime createdAt;
-
-    //@Setter
     @ManyToOne
     @JoinColumn(name = "id_agency")
     public AgencyDto agency;
-
-    //@Setter
     @ManyToOne
     @JoinColumn(name = "id_report")
     public ReportDto report;
