@@ -12,6 +12,5 @@ public record Agency (
         Long id,
         String name,
         ZonedDateTime createdAt,
-        @JsonIgnore
         List<ReportSubmission> reportSubmissions
 ) implements Serializable {}
