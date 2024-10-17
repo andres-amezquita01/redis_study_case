@@ -1,4 +1,4 @@
-package com.uptc.frw.newspaper.report.repository.jpa;
+package com.uptc.frw.newspaper.report.endpoint;
 
 import com.uptc.frw.newspaper.application.reportCover.ReportCoverUseCases;
 import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
