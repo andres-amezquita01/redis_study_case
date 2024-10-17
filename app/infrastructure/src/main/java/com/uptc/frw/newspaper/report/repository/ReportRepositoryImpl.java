@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReportImpl implements ReportRepository {
+public class ReportRepositoryImpl implements ReportRepository {
 
     private final ReportJpaRepository reportJpaRepository;
 
-    public ReportImpl(ReportJpaRepository reportJpaRepository) {
+    public ReportRepositoryImpl(ReportJpaRepository reportJpaRepository) {
         this.reportJpaRepository = reportJpaRepository;
     }
 
