@@ -1,8 +1,6 @@
-package com.uptc.frw.newspaper.involvement.jpa;
+package com.uptc.frw.newspaper.involvement.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.involvement.entity.Involvement;
-import com.uptc.frw.newspaper.involvementType.repository.jpa.InvolvementTypeMapper;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;

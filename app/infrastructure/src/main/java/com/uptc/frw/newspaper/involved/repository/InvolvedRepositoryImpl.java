@@ -34,7 +34,7 @@ public class InvolvedRepositoryImpl implements InvolvedRepository {
 
     @Override
     public Involved insertInvolved(Involved involvedId) {
-        final var involvedToSave = InvolvedDto.fromAgency(involvedId);
+        final var involvedToSave = InvolvedDto.toDto(involvedId);
         return jpaRepository.save(involvedToSave).toDomain();
     }
 
@@ -48,9 +48,9 @@ public class InvolvedRepositoryImpl implements InvolvedRepository {
 
     @Override
     public Optional<Involved> updateInvolved(Long involvedId, Involved involved) {
-        final var newInvolvedData = InvolvedDto.fromAgency(involved);
+        final var newInvolvedData = InvolvedDto.toDto(involved);
         return getInvolvedById(involvedId)
-                .map(InvolvedDto::fromAgency)
+                .map(InvolvedDto::toDto)
                 .map(involvedToUpdate -> {
                     involvedToUpdate.name = newInvolvedData.name;
                     involvedToUpdate.birthDate = newInvolvedData.birthDate;
