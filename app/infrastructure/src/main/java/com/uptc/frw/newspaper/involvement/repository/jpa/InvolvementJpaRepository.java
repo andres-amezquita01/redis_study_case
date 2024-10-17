@@ -1,4 +1,4 @@
-package com.uptc.frw.newspaper.involvement.jpa;
+package com.uptc.frw.newspaper.involvement.repository.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

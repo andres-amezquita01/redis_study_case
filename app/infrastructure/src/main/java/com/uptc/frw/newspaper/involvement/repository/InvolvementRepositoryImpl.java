@@ -1,7 +1,9 @@
-package com.uptc.frw.newspaper.involvement.jpa;
+package com.uptc.frw.newspaper.involvement.repository;
 
 import com.uptc.frw.newspaper.domain.involvement.entity.Involvement;
 import com.uptc.frw.newspaper.domain.involvement.repository.InvolvementRepository;
+import com.uptc.frw.newspaper.involvement.repository.jpa.InvolvementDto;
+import com.uptc.frw.newspaper.involvement.repository.jpa.InvolvementJpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

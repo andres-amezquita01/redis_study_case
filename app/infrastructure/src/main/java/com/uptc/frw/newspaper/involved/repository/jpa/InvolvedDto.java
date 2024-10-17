@@ -28,13 +28,13 @@ public class InvolvedDto {
     public ZonedDateTime birthDate;
 
     @OneToMany(mappedBy = "involved")
-    List<InvolvementDto> involvements;
+    public List<InvolvementDto> involvements;
 
     public Involved toDomain(){
         return InvolvedMapper.INSTANCE.toDomain(this, new CycleAvoidingMappingContext());
     }
 
-    public static InvolvedDto fromAgency(final Involved agency){
+    public static InvolvedDto toDto(final Involved agency){
         return InvolvedMapper.INSTANCE.toDto(agency, new CycleAvoidingMappingContext());
     }
 }

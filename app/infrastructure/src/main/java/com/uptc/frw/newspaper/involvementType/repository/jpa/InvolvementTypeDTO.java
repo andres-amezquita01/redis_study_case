@@ -1,7 +1,7 @@
 package com.uptc.frw.newspaper.involvementType.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.involvementType.entity.InvolvementType;
-import com.uptc.frw.newspaper.involvement.jpa.InvolvementDto;
+import com.uptc.frw.newspaper.involvement.repository.jpa.InvolvementDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
