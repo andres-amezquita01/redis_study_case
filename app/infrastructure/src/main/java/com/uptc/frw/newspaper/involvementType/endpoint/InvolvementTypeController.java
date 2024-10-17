@@ -1,4 +1,4 @@
-package com.uptc.frw.newspaper.involvementType.repository.endpoint;
+package com.uptc.frw.newspaper.involvementType.endpoint;
 
 import com.uptc.frw.newspaper.application.involvementType.InvolvementTypeUseCases;
 import com.uptc.frw.newspaper.domain.involvementType.entity.InvolvementType;

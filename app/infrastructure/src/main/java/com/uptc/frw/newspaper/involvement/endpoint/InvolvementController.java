@@ -28,6 +28,13 @@ public class InvolvementController {
     public Involvement addInvolvement(@RequestBody Involvement involvement){
         return  involvementUseCases.add(involvement);
     }
-
+    @DeleteMapping("/{involvementId}")
+    public Involvement deleteInvolvement(@PathVariable Long involvementId){
+        return  involvementUseCases.remove(involvementId).orElseThrow();
+    }
+    @PutMapping()
+    public Involvement updateInvolvement(@RequestBody Involvement involvement, @RequestParam Long involvementId){
+        return involvementUseCases.update(involvement, involvementId).orElseThrow();
+    }
 
 }
