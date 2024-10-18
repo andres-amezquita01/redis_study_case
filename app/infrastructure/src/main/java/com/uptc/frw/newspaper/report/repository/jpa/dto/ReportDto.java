@@ -5,6 +5,7 @@ import com.uptc.frw.newspaper.report.repository.jpa.mappers.ReportMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
@@ -45,5 +46,13 @@ public class ReportDto {
 
     public static ReportDto fromReport(final Report report) {
         return ReportMapper.INSTANCE.toDto(report, new CycleAvoidingMappingContext());
+    }
+
+    public List<ReportDto> getRelatedToReports() {
+        return relatedToReports;
+    }
+
+    public List<ReportDto> getRelatedFromReports() {
+        return relatedFromReports;
     }
 }

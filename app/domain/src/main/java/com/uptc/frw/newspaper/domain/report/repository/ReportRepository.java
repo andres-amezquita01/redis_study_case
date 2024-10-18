@@ -13,4 +13,8 @@ public interface ReportRepository {
     public Optional<Report> removeReport(final Long reportId);
     public Optional<Report> updateReport(final Report report, final Long reportId);
 
+    public void addRelatedReport(final Long reportId, final Long relatedReportId);
+    public void removeRelatedReport(final Long reportId, final Long relatedReportId);
+    public List<Report> getRelatedReports(final Long reportId);
+
 }

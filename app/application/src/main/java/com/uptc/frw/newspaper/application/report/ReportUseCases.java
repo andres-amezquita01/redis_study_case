@@ -42,4 +42,16 @@ public class ReportUseCases extends BaseUseCases<Report> {
     public Optional<Report> update(Report report, Long entityId) {
         return reportRepository.updateReport(report, entityId);
     }
+
+    public void addRelated(Long entityId, Long entityRelatedId) {
+        reportRepository.addRelatedReport(entityId, entityRelatedId);
+    }
+
+    public void removeRelated(Long entityId, Long entityRelatedId) {
+        reportRepository.removeRelatedReport(entityId, entityRelatedId);
+    }
+
+    public List<Report> getRelated(Long entityId) {
+        return reportRepository.getRelatedReports(entityId);
+    }
 }
