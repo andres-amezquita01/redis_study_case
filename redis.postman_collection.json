@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "862f8fa3-6af5-4fe3-9529-523bd3fff7d2",
+		"name": "redis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "reportCover",
+			"item": [
+				{
+					"name": "getAllReportCovers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reportCover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reportCover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReportCoverById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reportCover/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reportCover",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReportCover",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"coveredDate\": \"2024-10-16T08:50:42.000+00:00\",\n    \"journalist\": {\n        \"id\": 1,\n        \"name\": \"Alice Smith\",\n        \"address\": \"123 Maple Street, Springfield\",\n        \"phoneNumber\": \"555-1234\"\n    },\n    \"report\": {\n        \"id\": 1,\n        \"name\" : \"Environmental Impact of Tourism\",\n        \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n        \"occurredAtReport\": \"2024-10-16T08:50:42.000+00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reportCover/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reportCover",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addReportCover",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"coveredDate\": \"2024-10-16T08:50:42.000+00:00\",\n    \"journalist\": {\n        \"id\": 1,\n        \"name\": \"Alice Smith\",\n        \"address\": \"123 Maple Street, Springfield\",\n        \"phoneNumber\": \"555-1234\"\n    },\n    \"report\": {\n        \"id\": 1,\n        \"name\" : \"Environmental Impact of Tourism\",\n        \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n        \"occurredAtReport\": \"2024-10-16T08:50:42.000+00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reportCover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reportCover"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Involvement",
+			"item": [
+				{
+					"name": "getAllInvolvements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/involvement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInvolvementById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/involvement/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvement",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInvolvement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"report\": {\n        \"id\": 1,\n        \"title\": \"Environmental Impact of Tourism\",\n        \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n        \"occurredAtReport\": \"2024-10-01T08:30:00Z\",\n        \"reportSubmissions\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2024-10-08T10:30:00Z\"\n            }\n        ]\n    },\n    \"involvementType\": {\n        \"id\": 1,\n        \"title\": \"Affected\",\n        \"description\": \"The person is directly affected by the news event or story\"\n    },\n    \"involved\": {\n        \"id\": 1002,\n        \"name\": \"Pepe involved\",\n        \"birthDate\": \"2001-10-01T00:00:00Z\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/involvement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvolvement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"report\": {\n    \"id\": 1,\n    \"title\": \"Environmental Impact of Tourism\",\n    \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n    \"occurredAtReport\": \"2024-10-01T08:30:00Z\",\n    \"reportSubmissions\": [\n      {\n        \"id\": 1,\n        \"createdAt\": \"2024-10-08T10:30:00Z\"\n      }\n    ]\n  },\n  \"involvementType\": {\n    \"id\": 1,\n    \"title\": \"Affected\",\n    \"description\": \"The person is directly affected by the news event or story\"\n  },\n  \"involved\": {\n    \"id\": 1002,\n    \"name\": \"Pepe involved\",\n    \"birthDate\": \"2001-10-01T00:00:00Z\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/involvement/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvement",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Talk",
+			"item": [
+				{
+					"name": "getAllTalks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/talk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"talk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTalkById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/talk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"talk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTalk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"transcription\": \"Transcription text for talk 2\",\n    \"reportCover\": {\n        \"id\": 2,\n        \"coveredDate\": \"2024-10-16T03:50:42Z\"\n    },\n    \"involvement\": {\n        \"id\": 1,\n        \"report\": {\n            \"id\": 1,\n            \"title\": \"Environmental Impact of Tourism\",\n            \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n            \"occurredAtReport\": \"2024-10-01T08:30:00Z\",\n            \"reportSubmissions\": [\n                {\n                    \"id\": 1,\n                    \"createdAt\": \"2024-10-08T10:30:00Z\"\n                }\n            ]\n        },\n        \"involvementType\": {\n            \"id\": 1,\n            \"title\": \"Affected\",\n            \"description\": \"The person is directly affected by the news event or story\"\n        },\n        \"involved\": {\n            \"id\": 1002,\n            \"name\": \"Pepe involved\",\n            \"birthDate\": \"2001-10-01T00:00:00Z\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/talk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"talk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTalk Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"transcription\": \"New transcription text for talk 2\",\n    \"reportCover\": {\n        \"id\": 2,\n        \"coveredDate\": \"2024-10-16T03:50:42Z\"\n    },\n    \"involvement\": {\n        \"id\": 1,\n        \"report\": {\n            \"id\": 1,\n            \"title\": \"Environmental Impact of Tourism\",\n            \"content\": \"A detailed analysis of how tourism affects the local environment.\",\n            \"occurredAtReport\": \"2024-10-01T08:30:00Z\",\n            \"reportSubmissions\": [\n                {\n                    \"id\": 1,\n                    \"createdAt\": \"2024-10-08T10:30:00Z\"\n                }\n            ]\n        },\n        \"involvementType\": {\n            \"id\": 1,\n            \"title\": \"Affected\",\n            \"description\": \"The person is directly affected by the news event or story\"\n        },\n        \"involved\": {\n            \"id\": 1002,\n            \"name\": \"Pepe involved\",\n            \"birthDate\": \"2001-10-01T00:00:00Z\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/talk/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"talk",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "involvementType",
+			"item": [
+				{
+					"name": "getAllIInvolvementTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/involvementTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvementTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInvolvementTypeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/involvementTypes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvementTypes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInvolvementType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"title\": \"Tester\",\n    \"description\": \"The tester is a test involved type\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/involvementTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvementTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvolvementType",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"title\": \"Tester\",\n    \"description\": \"The tester is a test involved type for testing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/involvementTypes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"involvementTypes",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
