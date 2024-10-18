@@ -41,4 +41,19 @@ public class ReportController {
         return reportUseCases.update(report, reportId).orElseThrow();
     }
 
+    @PostMapping("/related")
+    public void addRelatedReport(@RequestParam("reportId") Long reportId, @RequestParam("relatedId") Long relatedId) {
+        reportUseCases.addRelated(reportId, relatedId);
+    }
+
+    @DeleteMapping("/related")
+    public void removeRelatedReport(@RequestParam("reportId") Long reportId, @RequestParam("relatedId") Long relatedId) {
+        reportUseCases.removeRelated(reportId, relatedId);
+    }
+
+    @GetMapping("/related/{reportId}")
+    public List<Report> getRelatedReportsById(@PathVariable("reportId") Long reportId) {
+        return reportUseCases.getRelated(reportId);
+    }
+
 }

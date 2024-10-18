@@ -59,4 +59,33 @@ public class ReportRepositoryImpl implements ReportRepository {
                     return reportJpaRepository.save(reportToUpdate);
                 }).map(ReportDto::toDomain);
     }
+
+    @Override
+    public void addRelatedReport(Long reportId, Long relatedReportId) {
+        ReportDto report = reportJpaRepository.findById(reportId).orElseThrow();
+        ReportDto relatedReport = reportJpaRepository.findById(relatedReportId).orElseThrow();
+
+        report.getRelatedFromReports().add(relatedReport);
+
+        reportJpaRepository.save(report);
+    }
+
+    @Override
+    public void removeRelatedReport(Long reportId, Long relatedReportId) {
+        ReportDto report = reportJpaRepository.findById(reportId).orElseThrow();
+        ReportDto relatedReport = reportJpaRepository.findById(relatedReportId).orElseThrow();
+
+        report.getRelatedFromReports().remove(relatedReport);
+
+        reportJpaRepository.save(report);
+    }
+
+    @Override
+    public List<Report> getRelatedReports(Long reportId) {
+        ReportDto report = reportJpaRepository.findById(reportId).orElseThrow();
+        return report.getRelatedFromReports()
+                .stream()
+                .map(ReportDto::toDomain)
+                .toList();
+    }
 }
