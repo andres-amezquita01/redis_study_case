@@ -18,6 +18,7 @@ public class AgencyRepositoryImpl  implements AgencyRepository {
     }
 
     @Override
+    @Cacheable(value = "agency", key = "#agencyId")
     public Optional<Agency> getAgencyById(Long agencyId) {
         return jpaRepository
                 .findById(agencyId)
@@ -25,6 +26,7 @@ public class AgencyRepositoryImpl  implements AgencyRepository {
     }
 
     @Override
+    @Cacheable(value = "agencies")
     public List<Agency> getAllAgencies() {
         return jpaRepository
                 .findAll()

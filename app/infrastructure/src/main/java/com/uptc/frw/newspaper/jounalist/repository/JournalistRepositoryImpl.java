@@ -3,6 +3,7 @@ package com.uptc.frw.newspaper.jounalist.repository;
 import com.uptc.frw.newspaper.domain.jounalist.entity.Journalist;
 import com.uptc.frw.newspaper.domain.jounalist.entity.repository.JournalistRepository;
 import com.uptc.frw.newspaper.jounalist.repository.jpa.*;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -17,12 +18,14 @@ public class JournalistRepositoryImpl implements JournalistRepository {
     }
 
     @Override
+    @Cacheable(value = "journalist", key = "#journalistId")
     public Optional<Journalist> getJournalistById(final Long journalistId) {
         return jpaRepository.findById(journalistId)
                 .map(JournalistDto::toDomain);
     }
 
     @Override
+    @Cacheable(value = "journalists")
     public List<Journalist> getAllJournalists() {
         return jpaRepository
                 .findAll()

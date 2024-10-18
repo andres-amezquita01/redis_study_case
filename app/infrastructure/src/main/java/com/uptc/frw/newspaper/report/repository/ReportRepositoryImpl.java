@@ -4,6 +4,7 @@ import com.uptc.frw.newspaper.domain.report.entity.Report;
 import com.uptc.frw.newspaper.domain.report.repository.ReportRepository;
 import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportDto;
 import com.uptc.frw.newspaper.report.repository.jpa.ReportJpaRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,12 +20,14 @@ public class ReportRepositoryImpl implements ReportRepository {
     }
 
     @Override
+    @Cacheable(value = "report", key = "#reportId")
     public Optional<Report> getReportById(Long reportId) {
         return reportJpaRepository.findById(reportId)
                 .map(ReportDto::toDomain);
     }
 
     @Override
+    @Cacheable(value = "reports")
     public List<Report> getAllReports() {
         return reportJpaRepository.findAll()
                 .stream()
