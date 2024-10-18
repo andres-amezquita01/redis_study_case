@@ -1,6 +1,8 @@
 package com.uptc.frw.newspaper.domain.jounalist.entity;
 
 import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
+
+import java.io.Serializable;
 import java.util.*;
 
 public record Journalist(
@@ -9,4 +11,4 @@ public record Journalist(
         String address,
         String phoneNumber,
         List<ReportCover> reportCovers
-) { }
+) implements Serializable { }
