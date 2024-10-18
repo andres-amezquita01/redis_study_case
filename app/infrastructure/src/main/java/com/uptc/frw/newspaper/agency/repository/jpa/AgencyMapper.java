@@ -1,6 +1,6 @@
 package com.uptc.frw.newspaper.agency.repository.jpa;
 
-import com.uptc.frw.newspaper.report.repository.jpa.ReportSubmissionMapper;
+import com.uptc.frw.newspaper.report.repository.jpa.mappers.ReportSubmissionMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;

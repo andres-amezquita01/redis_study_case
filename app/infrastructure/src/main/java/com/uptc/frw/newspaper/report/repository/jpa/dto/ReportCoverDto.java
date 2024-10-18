@@ -1,13 +1,12 @@
-package com.uptc.frw.newspaper.report.repository.jpa;
+package com.uptc.frw.newspaper.report.repository.jpa.dto;
 
 import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.jounalist.repository.jpa.JournalistDto;
+import com.uptc.frw.newspaper.report.repository.jpa.mappers.ReportCoverMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.ZonedDateTime;
-import java.util.Date;
 
 @Entity
 @Access(AccessType.FIELD)

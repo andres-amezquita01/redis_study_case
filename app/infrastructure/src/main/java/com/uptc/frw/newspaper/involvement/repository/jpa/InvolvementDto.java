@@ -3,7 +3,7 @@ package com.uptc.frw.newspaper.involvement.repository.jpa;
 import com.uptc.frw.newspaper.domain.involvement.entity.Involvement;
 import com.uptc.frw.newspaper.involved.repository.jpa.InvolvedDto;
 import com.uptc.frw.newspaper.involvementType.repository.jpa.InvolvementTypeDTO;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 

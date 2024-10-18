@@ -1,11 +1,10 @@
 package com.uptc.frw.newspaper.agency.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.agency.entity.Agency;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportSubmissionDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportSubmissionDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;

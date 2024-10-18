@@ -1,7 +1,8 @@
-package com.uptc.frw.newspaper.report.repository.jpa;
+package com.uptc.frw.newspaper.report.repository.jpa.dto;
 
 import com.uptc.frw.newspaper.agency.repository.jpa.AgencyDto;
 import com.uptc.frw.newspaper.domain.report.entity.ReportSubmission;
+import com.uptc.frw.newspaper.report.repository.jpa.mappers.ReportSubmissionMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 

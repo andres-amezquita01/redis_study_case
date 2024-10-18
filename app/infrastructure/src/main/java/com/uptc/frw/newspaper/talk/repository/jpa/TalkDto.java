@@ -1,11 +1,8 @@
 package com.uptc.frw.newspaper.talk.repository.jpa;
 
-import com.uptc.frw.newspaper.domain.involvement.entity.Involvement;
-import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.domain.talk.entity.Talk;
 import com.uptc.frw.newspaper.involvement.repository.jpa.InvolvementDto;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverDto;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverMapper;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportCoverDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 

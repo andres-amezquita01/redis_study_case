@@ -1,6 +1,8 @@
-package com.uptc.frw.newspaper.report.repository.jpa;
+package com.uptc.frw.newspaper.report.repository.jpa.mappers;
 
 import com.uptc.frw.newspaper.domain.report.entity.Report;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportCoverDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;

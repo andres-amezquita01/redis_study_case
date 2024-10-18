@@ -1,7 +1,7 @@
 package com.uptc.frw.newspaper.jounalist.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.jounalist.entity.Journalist;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportCoverDto;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
 import jakarta.persistence.*;
 import lombok.Data;
