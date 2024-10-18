@@ -2,7 +2,7 @@ package com.uptc.frw.newspaper.report.repository;
 
 import com.uptc.frw.newspaper.domain.report.entity.Report;
 import com.uptc.frw.newspaper.domain.report.repository.ReportRepository;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportDto;
 import com.uptc.frw.newspaper.report.repository.jpa.ReportJpaRepository;
 import org.springframework.stereotype.Service;
 

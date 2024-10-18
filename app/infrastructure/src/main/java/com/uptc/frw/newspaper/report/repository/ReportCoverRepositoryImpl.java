@@ -2,9 +2,7 @@ package com.uptc.frw.newspaper.report.repository;
 
 import com.uptc.frw.newspaper.domain.report.entity.ReportCover;
 import com.uptc.frw.newspaper.domain.report.repository.ReportCoverRepository;
-import com.uptc.frw.newspaper.involvementType.repository.jpa.InvolvementTypeDTO;
-import com.uptc.frw.newspaper.jounalist.repository.jpa.JournalistDto;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverDto;
+import com.uptc.frw.newspaper.report.repository.jpa.dto.ReportCoverDto;
 import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverJpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReportCoverImpl implements ReportCoverRepository {
+public class ReportCoverRepositoryImpl implements ReportCoverRepository {
     private ReportCoverJpaRepository reportCoverJpaRepository;
 
-    public ReportCoverImpl(ReportCoverJpaRepository reportCoverJpaRepository) {
+    public ReportCoverRepositoryImpl(ReportCoverJpaRepository reportCoverJpaRepository) {
         this.reportCoverJpaRepository = reportCoverJpaRepository;
     }
 

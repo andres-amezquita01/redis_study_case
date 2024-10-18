@@ -32,8 +32,8 @@ public class InvolvementController {
     public Involvement deleteInvolvement(@PathVariable Long involvementId){
         return  involvementUseCases.remove(involvementId).orElseThrow();
     }
-    @PutMapping()
-    public Involvement updateInvolvement(@RequestBody Involvement involvement, @RequestParam Long involvementId){
+    @PutMapping("/{involvementId}")
+    public Involvement updateInvolvement(@RequestBody Involvement involvement, @PathVariable Long involvementId){
         return involvementUseCases.update(involvement, involvementId).orElseThrow();
     }
 

@@ -1,10 +1,8 @@
 package com.uptc.frw.newspaper.jounalist.repository.jpa;
 
 import com.uptc.frw.newspaper.domain.jounalist.entity.Journalist;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportCoverMapper;
-import com.uptc.frw.newspaper.report.repository.jpa.ReportSubmissionMapper;
+import com.uptc.frw.newspaper.report.repository.jpa.mappers.ReportCoverMapper;
 import com.uptc.frw.newspaper.shared.CycleAvoidingMappingContext;
-import jakarta.persistence.JoinColumn;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

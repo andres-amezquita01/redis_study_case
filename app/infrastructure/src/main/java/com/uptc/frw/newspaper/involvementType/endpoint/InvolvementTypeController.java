@@ -15,7 +15,7 @@ public class InvolvementTypeController {
         this.involvementTypeUseCases = involvementTypeUseCases;
     }
     @GetMapping()
-    public List<InvolvementType> getAlliInvolvementTypes(){
+    public List<InvolvementType> getAllInvolvementTypes(){
         return involvementTypeUseCases.listAll();
     }
     @GetMapping("/{involvementTypeId}")
